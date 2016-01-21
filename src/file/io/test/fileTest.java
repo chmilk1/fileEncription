@@ -13,19 +13,19 @@ public class fileTest {
 	@Test
 	// Is Real Life True?
 	public void isRealLife() throws Exception {
-		assertTrue(1 == 1);
+		assertFalse(1 == 0);
 	}
 	@Test
 	/* Create a file in your project. Use the File object to open it. */
 	public void testOpenFile() throws Exception {
 		assertTrue(FileEncryptor.openSecretFile().isFile());
 	}
-
+	@Test
 	/* Adjust these asserts to match the text in your secret file. */
 	public void testReadFile() throws Exception {
 		File file = FileEncryptor.openSecretFile();
-		assertEquals("The launch codes go like this", FileEncryptor.readOneLine(file));
-		assertEquals("-916832715428174219", FileEncryptor.readFileContents(file));
+		assertEquals("1133", FileEncryptor.readOneLine(file));
+		assertEquals("113312345678", FileEncryptor.readFileContents(file));
 	}
 
 	/* Create your own encryption algorithm and adjust the asserts. */

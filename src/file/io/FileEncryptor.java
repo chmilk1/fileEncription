@@ -16,7 +16,7 @@ public class FileEncryptor {
 	// Objects \\
 
 	public static File openSecretFile() {
-		return new File("files/code");
+		return new File("files/codes");
 	}
 
 	public static String encrypt(String encryptMe) {
@@ -44,18 +44,9 @@ public class FileEncryptor {
 		return null;
 	}
 
-	public static String readOneLine(File file2) {
-		File file = new File("files/code");
+	public static String readOneLine(File file2) throws FileNotFoundException, IOException {
 		String ln1 = null;
-		try {
-			ln1 = new BufferedReader(new FileReader(file)).readLine();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			ln1 = new BufferedReader(new FileReader(new File("files/codes"))).readLine();
 		return ln1;
 	}
 
